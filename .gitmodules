@@ -1,0 +1,10 @@
+[submodule "mathcomp"]
+	path = mathcomp
+	url = git@github.com:jscoq/addon-mathcomp
+	branch = mathcomp-1.10.0
+[submodule "elpi"]
+	path = elpi
+	url = git@github.com:jscoq/addon-elpi.git
+[submodule "equations"]
+	path = equations
+	url = git@github.com:jscoq/addon-equations.git
