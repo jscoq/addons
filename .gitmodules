@@ -8,3 +8,9 @@
 [submodule "equations"]
 	path = equations
 	url = git@github.com:jscoq/addon-equations.git
+[submodule "extlib"]
+	path = extlib
+	url = https://github.com/jscoq/addon-extlib.git
+[submodule "simpleio"]
+	path = simpleio
+	url = https://github.com/jscoq/addon-simpleio
