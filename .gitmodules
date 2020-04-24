@@ -14,3 +14,6 @@
 [submodule "simpleio"]
 	path = simpleio
 	url = https://github.com/jscoq/addon-simpleio
+[submodule "quickchick"]
+	path = quickchick
+	url = https://github.com/jscoq/addon-quickchick
