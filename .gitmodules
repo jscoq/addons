@@ -17,3 +17,6 @@
 [submodule "quickchick"]
 	path = quickchick
 	url = https://github.com/jscoq/addon-quickchick
+[submodule "software-foundations"]
+	path = software-foundations
+	url = https://github.com/jscoq/addon-software-foundations
