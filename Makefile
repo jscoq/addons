@@ -1,3 +1,4 @@
+PKGS = elpi equations extlib simpleio mathcomp quickchick
 
 world:
 	cd elpi               && make
@@ -10,3 +11,6 @@ world:
 clean-slate:
 	rm -rf */workdir
 	rm -rf _build
+
+pack:
+	cd _build/jscoq+64bit && npm pack ${addprefix ./, $(PKGS)}
