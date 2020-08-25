@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+
+/**
+ * Sets the "version" field in `package.json` for all
+ * modules at once.
+ * (useful for release candidates)
+ */
+
+const fs = require('fs'),
+      assert = require('assert');
+
+
+function setAll(ver) {
+    for (let d of fs.readdirSync('.')) {
+        var fn = `${d}/package.json`;
+        if (fs.existsSync(fn)) {
+            var inp = fs.readFileSync(fn, 'utf-8');
+            var out = inp.replace(/"version": .*/, `"version": "${ver}",`);
+            var v = JSON.parse(out); // make sure
+            console.log(v.name, v.version);
+            assert(v.version === ver);
+            fs.writeFileSync(fn, out);
+        }
+    }
+}
+
+
+if (process.argv.length === 3) {
+    setAll(process.argv[2]);
+}
+else {
+    console.log("usage: set-ver <version-number>");
+}
