@@ -23,3 +23,6 @@
 [submodule "hahn"]
 	path = hahn
 	url = git@github.com:jscoq/addon-hahn.git
+[submodule "paco"]
+	path = paco
+	url = git@github.com:jscoq/addon-paco.git
