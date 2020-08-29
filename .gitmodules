@@ -10,13 +10,16 @@
 	url = git@github.com:jscoq/addon-equations.git
 [submodule "extlib"]
 	path = extlib
-	url = https://github.com/jscoq/addon-extlib.git
+	url = git@github.com:jscoq/addon-extlib.git
 [submodule "simpleio"]
 	path = simpleio
-	url = https://github.com/jscoq/addon-simpleio
+	url = git@github.com:jscoq/addon-simpleio.git
 [submodule "quickchick"]
 	path = quickchick
-	url = https://github.com/jscoq/addon-quickchick
+	url = git@github.com:jscoq/addon-quickchick.git
 [submodule "software-foundations"]
 	path = software-foundations
-	url = https://github.com/jscoq/addon-software-foundations
+	url = git@github.com:jscoq/addon-software-foundations
+[submodule "hahn"]
+	path = hahn
+	url = git@github.com:jscoq/addon-hahn.git
