@@ -26,3 +26,12 @@
 [submodule "paco"]
 	path = paco
 	url = git@github.com:jscoq/addon-paco.git
+[submodule "snu-sflib"]
+	path = snu-sflib
+	url = git@github.com:jscoq/addon-snu-sflib.git
+[submodule "promising-lib"]
+	path = promising-lib
+	url = git@github.com:jscoq/addon-promising-lib.git
+[submodule "promising-coq"]
+	path = promising-coq
+	url = git@github.com:jscoq/addon-promising-coq.git
