@@ -35,3 +35,6 @@
 [submodule "promising-coq"]
 	path = promising-coq
 	url = git@github.com:jscoq/addon-promising-coq.git
+[submodule "promising"]
+	path = promising
+	url = git@github.com:jscoq/addon-promising.git

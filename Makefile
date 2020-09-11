@@ -1,5 +1,5 @@
 PKGS = elpi equations extlib simpleio mathcomp quickchick software-foundations \
-	   hahn snu-sflib paco promising-lib promising-coq
+	   hahn paco snu-sflib promising
 
 CONTEXT = jscoq+64bit
 
