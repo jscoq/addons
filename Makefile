@@ -2,8 +2,13 @@ PKGS = elpi equations extlib simpleio mathcomp quickchick software-foundations \
 	   hahn paco snu-sflib promising
 
 CONTEXT = jscoq+64bit
+ifeq ($(DUNE_WORKSPACE:%.wacoq=wacoq), wacoq)
+CONTEXT = wacoq
+endif
 
 BUILT_PKGS = ${filter $(PKGS), ${notdir ${wildcard _build/$(CONTEXT)/*}}}
+
+COMMIT_FLAGS = -a
 
 world:
 	cd elpi               && make
@@ -15,6 +20,12 @@ world:
 
 set-ver:
 	_scripts/set-ver ${firstword $(VERSION) $(VER)}
+
+commit-all:
+	for d in $(PKGS); do ( cd $$d && git commit $(COMMIT_FLAGS) -m "$(MSG)" ); done
+
+push-all:
+	for d in $(PKGS); do cd $$d && git push $(PUSH_FLAGS); done
 
 clean-slate:
 	rm -rf */workdir
