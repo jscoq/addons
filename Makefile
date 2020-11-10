@@ -8,7 +8,15 @@ endif
 
 BUILT_PKGS = ${filter $(PKGS), ${notdir ${wildcard _build/$(CONTEXT)/*}}}
 
+_V = ${firstword $(VERSION) $(VER)}
+
 COMMIT_FLAGS = -a
+
+ifneq ($(_V),)
+MSG = [deploy] Prepare for $(_V).
+else
+MSG = ${error MSG= is mandatory}
+endif
 
 world:
 	cd elpi               && make
@@ -19,13 +27,17 @@ world:
 	cd quickchick         && make
 
 set-ver:
-	_scripts/set-ver ${firstword $(VERSION) $(VER)}
-
+	_scripts/set-ver 
 commit-all:
 	for d in $(PKGS); do ( cd $$d && git commit $(COMMIT_FLAGS) -m "$(MSG)" ); done
+	git commit $(COMMIT_FLAGS) -m "$(MSG)"
 
 push-all:
-	for d in $(PKGS); do cd $$d && git push $(PUSH_FLAGS); done
+	for d in $(PKGS); do ( cd $$d && git push $(PUSH_FLAGS) ); done
+
+commit+push-all:
+	#for d in $(PKGS); do ( cd $$d && git commit $(COMMIT_FLAGS) -m "$(MSG)" && git push $(PUSH_FLAGS) ); done
+	git commit $(COMMIT_FLAGS) -m "$(MSG)" && git push $(PUSH_FLAGS)
 
 clean-slate:
 	rm -rf */workdir
