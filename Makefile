@@ -1,9 +1,17 @@
 PKGS = elpi equations extlib simpleio mathcomp quickchick software-foundations \
-	   hahn paco snu-sflib promising
+	   hahn paco snu-sflib promising fcsl-pcm htt pnp
 
 CONTEXT = jscoq+64bit
 ifeq ($(DUNE_WORKSPACE:%.wacoq=wacoq), wacoq)
 CONTEXT = wacoq
+endif
+
+ifeq ($(CONTEXT)$(DUNE_WORKSPACE), wacoq)
+DUNE_WORKSPACE = $(PWD)/dune-workspace.wacoq
+endif
+
+ifneq ($(DUNE_WORKSPACE),)
+export DUNE_WORKSPACE
 endif
 
 BUILT_PKGS = ${filter $(PKGS), ${notdir ${wildcard _build/$(CONTEXT)/*}}}
@@ -23,8 +31,15 @@ world:
 	cd equations          && make
 	cd extlib             && make && make install    # required by SimpleIO
 	cd simpleio           && make && make install    # required by QuickChick
-	cd mathcomp           && make && make install    # required by QuickChick
+	cd mathcomp           && make && make install    # required by QuickChick, FCSL-PCM, HTT
 	cd quickchick         && make
+	cd hahn               && make && make install    # required by Promising
+	cd paco               && make && make install    # required by Promising
+	cd snu-sflib          && make && make install    # required by Promising
+	cd promising          && make
+	cd fcsl-pcm           && make && make install    # required by HTT
+	cd htt                && make && make install    # required by PnP
+	cd pnp                && make
 
 set-ver:
 	_scripts/set-ver 
@@ -36,7 +51,7 @@ push-all:
 	for d in $(PKGS); do ( cd $$d && git push $(PUSH_FLAGS) ); done
 
 commit+push-all:
-	#for d in $(PKGS); do ( cd $$d && git commit $(COMMIT_FLAGS) -m "$(MSG)" && git push $(PUSH_FLAGS) ); done
+	for d in $(PKGS); do ( cd $$d && git commit $(COMMIT_FLAGS) -m "$(MSG)" && git push $(PUSH_FLAGS) ); done
 	git commit $(COMMIT_FLAGS) -m "$(MSG)" && git push $(PUSH_FLAGS)
 
 clean-slate:

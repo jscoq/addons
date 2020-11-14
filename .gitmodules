@@ -38,3 +38,15 @@
 [submodule "promising"]
 	path = promising
 	url = git@github.com:jscoq/addon-promising.git
+[submodule "htt"]
+	path = htt
+	url = git@github.com:jscoq/addon-htt.git
+[submodule "addon-fcsl-pcm"]
+	path = addon-fcsl-pcm
+	url = git@github.com:jscoq/addon-fcsl-pcm.git
+[submodule "fcsl-pcm"]
+	path = fcsl-pcm
+	url = git@github.com:jscoq/addon-fcsl-pcm.git
+[submodule "pnp"]
+	path = pnp
+	url = git@github.com:jscoq/addon-pnp.git
