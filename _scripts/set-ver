@@ -10,12 +10,13 @@ const fs = require('fs'),
       assert = require('assert');
 
 
-function setAll(ver) {
+function setAll(ver, scope='@jscoq') {
     for (let d of fs.readdirSync('.')) {
         var fn = `${d}/package.json`;
         if (fs.existsSync(fn)) {
             var inp = fs.readFileSync(fn, 'utf-8');
-            var out = inp.replace(/"version": .*/, `"version": "${ver}",`);
+            var out = inp.replace(/"version": .*/, `"version": "${ver}",`)
+                         .replace(/"name": "@[^/]+\// /*"*/, `"name": "${scope}/`);
             var v = JSON.parse(out); // make sure
             console.log(v.name, v.version);
             assert(v.version === ver);
@@ -25,9 +26,21 @@ function setAll(ver) {
 }
 
 
-if (process.argv.length === 3) {
-    setAll(process.argv[2]);
+function parseArgs() {
+    var opts = {};
+    for (let arg of process.argv.slice(2)) {
+        if (arg.startsWith('@')) opts.scope = arg.replace(/\+.*/, ''); // remove e.g. +32bit
+        else if (arg.match(/^\d/)) opts.ver = arg;
+        else return {};
+    }
+    return opts;
+}
+
+var opts = parseArgs();
+
+if (opts.ver) {
+    setAll(opts.ver, opts.scope);
 }
 else {
-    console.log("usage: set-ver <version-number>");
+    console.log("usage: set-ver [scope] <version-number>");
 }

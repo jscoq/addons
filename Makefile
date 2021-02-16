@@ -42,7 +42,14 @@ world:
 	cd pnp                && make
 
 set-ver:
-	_scripts/set-ver 
+	_scripts/set-ver ${addprefix @,$(CONTEXT)} $(_V)
+	if [ -e _build/$(CONTEXT) ] ; then \
+	  dune build _build/$(CONTEXT)/*/package.json ; fi  # update build directory as well
+
+pack:
+	rm -rf _build/$(CONTEXT)/*.tgz
+	cd _build/$(CONTEXT) && npm pack ${addprefix ./, $(BUILT_PKGS)}
+
 commit-all:
 	for d in $(PKGS); do ( cd $$d && git commit $(COMMIT_FLAGS) -m "$(MSG)" ); done
 	git commit $(COMMIT_FLAGS) -m "$(MSG)"
@@ -51,12 +58,12 @@ push-all:
 	for d in $(PKGS); do ( cd $$d && git push $(PUSH_FLAGS) ); done
 
 commit+push-all:
-	for d in $(PKGS); do ( cd $$d && git commit $(COMMIT_FLAGS) -m "$(MSG)" && git push $(PUSH_FLAGS) ); done
+	for d in $(PKGS); do ( cd $$d && \
+	   	git commit $(COMMIT_FLAGS) -m "$(MSG)" && \
+	    git push $(PUSH_FLAGS) ); done
 	git commit $(COMMIT_FLAGS) -m "$(MSG)" && git push $(PUSH_FLAGS)
 
 clean-slate:
 	rm -rf */workdir
 	rm -rf _build
 
-pack:
-	cd _build/$(CONTEXT) && npm pack ${addprefix ./, $(BUILT_PKGS)}
