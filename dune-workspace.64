@@ -3,5 +3,5 @@
 (profile release)
 
 (context
- (opam (switch jscoq+32bit)
+ (opam (switch jscoq+64bit)
   (merlin)))

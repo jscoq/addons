@@ -1,13 +1,25 @@
 PKGS = elpi equations extlib simpleio mathcomp quickchick software-foundations \
 	   hahn paco snu-sflib promising fcsl-pcm htt pnp
 
+CONTEXT = jscoq+32bit
+ifeq ($(DUNE_WORKSPACE:%.64=64), 64)
 CONTEXT = jscoq+64bit
+endif
 ifeq ($(DUNE_WORKSPACE:%.wacoq=wacoq), wacoq)
 CONTEXT = wacoq
 endif
 
-ifeq ($(CONTEXT)$(DUNE_WORKSPACE), wacoq)
+# needed when invoking `opam install`
+OPAMSWITCH = $(CONTEXT)
+export OPAMSWITCH
+
+ifeq ($(DUNE_WORKSPACE),)
+ifeq ($(CONTEXT), wacoq)
 DUNE_WORKSPACE = $(PWD)/dune-workspace.wacoq
+endif
+ifeq ($(CONTEXT), jscoq+64bit)
+DUNE_WORKSPACE = $(PWD)/dune-workspace.64
+endif
 endif
 
 ifneq ($(DUNE_WORKSPACE),)
