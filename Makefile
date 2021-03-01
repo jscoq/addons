@@ -52,6 +52,14 @@ world:
 	cd fcsl-pcm           && make && make install    # required by HTT
 	cd htt                && make && make install    # required by PnP
 	cd pnp                && make
+ifneq ($(filter software-foundations, $(WITH_PRIVATE)),)
+	cd software-foundations && make
+endif
+
+privates:
+ifneq ($(filter software-foundations, $(WITH_PRIVATE)),)
+	cd software-foundations && make
+endif
 
 set-ver:
 	_scripts/set-ver ${addprefix @,$(CONTEXT)} $(_V)
