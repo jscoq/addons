@@ -4,49 +4,53 @@
 	branch = mathcomp-1.10.0
 [submodule "elpi"]
 	path = elpi
-	url = git@github.com:jscoq/addon-elpi.git
+    url = git@github.com:jscoq/addon-elpi.git
+    branch = elpi-1.11-8.12
 [submodule "equations"]
 	path = equations
-	url = git@github.com:jscoq/addon-equations.git
+    url = git@github.com:jscoq/addon-equations.git
+    branch = equations-1.2.3-8.12
 [submodule "extlib"]
 	path = extlib
-	url = git@github.com:jscoq/addon-extlib.git
+    url = git@github.com:jscoq/addon-extlib.git
+    branch = master
 [submodule "simpleio"]
 	path = simpleio
-	url = git@github.com:jscoq/addon-simpleio.git
+    url = git@github.com:jscoq/addon-simpleio.git
+    branch = simpleio-1.3.0
 [submodule "quickchick"]
 	path = quickchick
-	url = git@github.com:jscoq/addon-quickchick.git
+    url = git@github.com:jscoq/addon-quickchick.git
+    branch = v8.12
 [submodule "software-foundations"]
 	path = software-foundations
-	url = git@github.com:jscoq/addon-software-foundations
+    url = git@github.com:jscoq/addon-software-foundations
+    branch = master
 [submodule "hahn"]
 	path = hahn
-	url = git@github.com:jscoq/addon-hahn.git
+    url = git@github.com:jscoq/addon-hahn.git
+    branch = master
 [submodule "paco"]
 	path = paco
 	url = git@github.com:jscoq/addon-paco.git
+    branch = paco-4.0.0
 [submodule "snu-sflib"]
 	path = snu-sflib
-	url = git@github.com:jscoq/addon-snu-sflib.git
-[submodule "promising-lib"]
-	path = promising-lib
-	url = git@github.com:jscoq/addon-promising-lib.git
-[submodule "promising-coq"]
-	path = promising-coq
-	url = git@github.com:jscoq/addon-promising-coq.git
+    url = git@github.com:jscoq/addon-snu-sflib.git
+    branch = master
 [submodule "promising"]
 	path = promising
-	url = git@github.com:jscoq/addon-promising.git
+    url = git@github.com:jscoq/addon-promising.git
+    branch = master
 [submodule "htt"]
 	path = htt
-	url = git@github.com:jscoq/addon-htt.git
-[submodule "addon-fcsl-pcm"]
-	path = addon-fcsl-pcm
-	url = git@github.com:jscoq/addon-fcsl-pcm.git
+    url = git@github.com:jscoq/addon-htt.git
+    branch = main
 [submodule "fcsl-pcm"]
 	path = fcsl-pcm
 	url = git@github.com:jscoq/addon-fcsl-pcm.git
+    branch = main
 [submodule "pnp"]
 	path = pnp
 	url = git@github.com:jscoq/addon-pnp.git
+    branch = main
