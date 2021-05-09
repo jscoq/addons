@@ -28,13 +28,18 @@ endif
 
 BUILT_PKGS = ${filter $(PKGS), ${notdir ${wildcard _build/$(CONTEXT)/*}}}
 
-_V = ${firstword $(VERSION) $(VER)}
+_V = ${firstword $(VERSION) $(VER) $(V)}
 
 COMMIT_FLAGS = -a
 
 ifneq ($(_V),)
 MSG = [deploy] Prepare for $(_V).
 else
+ifeq ($(CONTEXT), wacoq)
+_V = ${shell wacoq --version}
+else
+_V = ${shell jscoq --version}
+endif
 MSG = ${error MSG= is mandatory}
 endif
 
