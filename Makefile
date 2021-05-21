@@ -26,6 +26,8 @@ ifneq ($(DUNE_WORKSPACE),)
 export DUNE_WORKSPACE
 endif
 
+OPAM_ENV = eval `opam env`
+
 BUILT_PKGS = ${filter $(PKGS), ${notdir ${wildcard _build/$(CONTEXT)/*}}}
 
 _V = ${firstword $(VERSION) $(VER) $(V)}
@@ -69,7 +71,7 @@ endif
 set-ver:
 	_scripts/set-ver ${addprefix @,$(CONTEXT)} $(_V)
 	if [ -e _build/$(CONTEXT) ] ; then \
-	  dune build _build/$(CONTEXT)/*/package.json ; fi  # update build directory as well
+	  $(OPAM_ENV) && dune build _build/$(CONTEXT)/*/package.json ; fi  # update build directory as well
 
 pack:
 	rm -rf _build/$(CONTEXT)/*.tgz
@@ -92,3 +94,8 @@ clean-slate:
 	rm -rf */workdir
 	rm -rf _build
 
+ci:
+	$(MAKE) clean-slate
+	$(OPAM_ENV) && $(MAKE)
+	$(MAKE) set-ver
+	$(MAKE) pack
