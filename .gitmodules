@@ -2,6 +2,10 @@
 	path = mathcomp
 	url = git@github.com:jscoq/addon-mathcomp
 	branch = mathcomp-1.12.0
+[submodule "mathcomp-extra"]
+	path = mathcomp-extra
+	url = git@github.com:jscoq/addon-mathcomp-extra.git
+    branch = v8.13
 [submodule "elpi"]
 	path = elpi
     url = git@github.com:jscoq/addon-elpi.git

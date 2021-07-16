@@ -51,6 +51,7 @@ world:
 	cd extlib             && make && make install    # required by SimpleIO
 	cd simpleio           && make && make install    # required by QuickChick
 	cd mathcomp           && make && make install    # required by QuickChick, FCSL-PCM, HTT
+	cd mathcomp-extra     && make
 	cd quickchick         && make
 	cd hahn               && make && make install    # required by Promising
 	cd paco               && make && make install    # required by Promising
