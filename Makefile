@@ -1,4 +1,4 @@
-PKGS = elpi equations extlib simpleio mathcomp quickchick software-foundations \
+PKGS = elpi equations extlib simpleio mathcomp mathcomp-extra quickchick software-foundations \
 	   hahn paco snu-sflib promising fcsl-pcm htt pnp
 
 CONTEXT = jscoq+32bit
