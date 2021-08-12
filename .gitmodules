@@ -29,7 +29,7 @@
 [submodule "software-foundations"]
 	path = software-foundations
     url = git@github.com:jscoq/addon-software-foundations
-    branch = jscoq
+    branch = master
 [submodule "hahn"]
 	path = hahn
     url = git@github.com:jscoq/addon-hahn.git
