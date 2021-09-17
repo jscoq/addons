@@ -58,3 +58,7 @@
 	path = pnp
 	url = git@github.com:jscoq/addon-pnp.git
     branch = main
+[submodule "coqoban"]
+	path = coqoban
+	url = git@github.com:jscoq/addon-coqoban.git
+	branch = v8.13
