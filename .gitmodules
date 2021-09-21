@@ -37,7 +37,7 @@
 [submodule "paco"]
 	path = paco
 	url = git@github.com:jscoq/addon-paco.git
-    branch = paco-4.1.1-8.13
+    branch = paco-4.1.1-8.14
 [submodule "snu-sflib"]
 	path = snu-sflib
     url = git@github.com:jscoq/addon-snu-sflib.git

@@ -46,13 +46,13 @@ MSG = ${error MSG= is mandatory}
 endif
 
 world:
-	cd elpi               && make
-	cd equations          && make
+	#cd elpi               && make
+	#cd equations          && make
 	cd extlib             && make && make install    # required by SimpleIO
 	cd simpleio           && make && make install    # required by QuickChick
 	cd mathcomp           && make && make install    # required by QuickChick, FCSL-PCM, HTT
 	cd mathcomp-extra     && make
-	cd quickchick         && make
+	#cd quickchick         && make
 	cd hahn               && make && make install    # required by Promising
 	cd paco               && make && make install    # required by Promising
 	cd snu-sflib          && make && make install    # required by Promising
