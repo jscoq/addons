@@ -5,7 +5,7 @@
 [submodule "mathcomp-extra"]
 	path = mathcomp-extra
 	url = git@github.com:jscoq/addon-mathcomp-extra.git
-    branch = v8.13
+    branch = v8.14
 [submodule "elpi"]
 	path = elpi
     url = git@github.com:jscoq/addon-elpi.git
@@ -21,7 +21,7 @@
 [submodule "simpleio"]
 	path = simpleio
     url = git@github.com:jscoq/addon-simpleio.git
-    branch = simpleio-1.5.0-8.13
+    branch = simpleio-1.5.0-8.14
 [submodule "quickchick"]
 	path = quickchick
     url = git@github.com:jscoq/addon-quickchick.git
@@ -45,7 +45,7 @@
 [submodule "promising"]
 	path = promising
     url = git@github.com:jscoq/addon-promising.git
-    branch = 8.13
+    branch = 8.14
 [submodule "htt"]
 	path = htt
     url = git@github.com:jscoq/addon-htt.git
@@ -61,4 +61,4 @@
 [submodule "coqoban"]
 	path = coqoban
 	url = git@github.com:jscoq/addon-coqoban.git
-	branch = v8.13
+	branch = v8.14
