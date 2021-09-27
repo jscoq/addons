@@ -46,7 +46,7 @@ MSG = ${error MSG= is mandatory}
 endif
 
 world:
-	#cd elpi               && make
+	cd elpi               && make
 	#cd equations          && make
 	cd extlib             && make && make install    # required by SimpleIO
 	cd simpleio           && make && make install    # required by QuickChick

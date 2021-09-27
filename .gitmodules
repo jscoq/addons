@@ -9,7 +9,7 @@
 [submodule "elpi"]
 	path = elpi
     url = git@github.com:jscoq/addon-elpi.git
-    branch = elpi-1.9.7-8.13
+    branch = elpi-1.11.2-8.14
 [submodule "equations"]
 	path = equations
     url = git@github.com:jscoq/addon-equations.git
