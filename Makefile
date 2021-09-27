@@ -47,7 +47,7 @@ endif
 
 world:
 	cd elpi               && make
-	#cd equations          && make
+	cd equations          && make
 	cd extlib             && make && make install    # required by SimpleIO
 	cd simpleio           && make && make install    # required by QuickChick
 	cd mathcomp           && make && make install    # required by QuickChick, FCSL-PCM, HTT
