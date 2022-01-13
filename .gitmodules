@@ -62,3 +62,7 @@
 	path = coqoban
 	url = git@github.com:jscoq/addon-coqoban.git
 	branch = v8.14
+[submodule "stdpp"]
+	path = stdpp
+	url = git@github.com:jscoq/addon-stdpp.git
+	branch = stdpp-1.6.0-coq-8.14
