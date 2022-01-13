@@ -1,5 +1,5 @@
 PKGS = elpi equations extlib simpleio mathcomp mathcomp-extra quickchick software-foundations \
-	   hahn paco snu-sflib promising fcsl-pcm htt pnp coqoban stdpp
+	   hahn paco snu-sflib promising fcsl-pcm htt pnp coqoban stdpp iris
 
 CONTEXT = jscoq+32bit
 ifeq ($(DUNE_WORKSPACE:%.64=64), 64)
@@ -62,6 +62,7 @@ world:
 	cd pnp                && make
 	cd coqoban            && make
 	cd stdpp              && make && make install    # required by Iris
+	cd iris               && make
 ifneq ($(filter software-foundations, $(WITH_PRIVATE)),)
 	cd software-foundations && make
 endif

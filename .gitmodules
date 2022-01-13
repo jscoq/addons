@@ -66,3 +66,7 @@
 	path = stdpp
 	url = git@github.com:jscoq/addon-stdpp.git
 	branch = stdpp-1.6.0-coq-8.14
+[submodule "iris"]
+	path = iris
+	url = git@github.com:jscoq/addon-iris.git
+	branch = iris-3.5.0-coq-8.14
