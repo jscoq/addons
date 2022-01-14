@@ -79,6 +79,7 @@ set-ver:
 
 pack:
 	rm -rf _build/$(CONTEXT)/*.tgz
+	_scripts/set-ver ${addprefix @,$(CONTEXT)} $(_V) _build/$(CONTEXT)
 	cd _build/$(CONTEXT) && npm pack ${addprefix ./, $(BUILT_PKGS)}
 
 commit-all:
@@ -101,5 +102,4 @@ clean-slate:
 ci:
 	$(MAKE) clean-slate
 	$(OPAM_ENV) && $(MAKE)
-	$(MAKE) set-ver
 	$(MAKE) pack

@@ -7,12 +7,13 @@
  */
 
 const fs = require('fs'),
+      path = require('path'),
       assert = require('assert');
 
 
-function setAll(ver, scope='@jscoq') {
-    for (let d of fs.readdirSync('.')) {
-        var fn = `${d}/package.json`;
+function setAll(ver, scope='@jscoq', workspaceDir='.') {
+    for (let d of fs.readdirSync(workspaceDir)) {
+        var fn = path.join(workspaceDir, d, 'package.json');
         if (fs.existsSync(fn)) {
             var inp = fs.readFileSync(fn, 'utf-8');
             var out = inp.replace(/"version": .*/, `"version": "${ver}",`)
@@ -20,6 +21,7 @@ function setAll(ver, scope='@jscoq') {
             var v = JSON.parse(out); // make sure
             console.log(v.name, v.version);
             assert(v.version === ver);
+            fs.chmodSync(fn, 0644);  // allow running in Dune build dir
             fs.writeFileSync(fn, out);
         }
     }
@@ -31,7 +33,8 @@ function parseArgs() {
     for (let arg of process.argv.slice(2)) {
         if (arg.startsWith('@')) opts.scope = arg.replace(/\+.*/, ''); // remove e.g. +32bit
         else if (arg.match(/^\d/)) opts.ver = arg;
-        else return {};
+        else if (!opts.dir) opts.dir = arg;
+        else console.warn(`[set-ver] extraneous argument: '${arg}'`);
     }
     return opts;
 }
@@ -39,7 +42,7 @@ function parseArgs() {
 var opts = parseArgs();
 
 if (opts.ver) {
-    setAll(opts.ver, opts.scope);
+    setAll(opts.ver, opts.scope, opts.dir);
 }
 else {
     console.log("usage: set-ver [scope] <version-number>");
