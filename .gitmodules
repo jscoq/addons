@@ -5,15 +5,15 @@
 [submodule "mathcomp-extra"]
 	path = mathcomp-extra
 	url = git@github.com:jscoq/addon-mathcomp-extra.git
-    branch = v8.14
+    branch = v8.15
 [submodule "elpi"]
 	path = elpi
     url = git@github.com:jscoq/addon-elpi.git
-    branch = elpi-1.11.2-8.14
+    branch = elpi-1.12-8.15
 [submodule "equations"]
 	path = equations
     url = git@github.com:jscoq/addon-equations.git
-    branch = equations-1.3-8.14
+    branch = equations-1.3-8.15
 [submodule "extlib"]
 	path = extlib
     url = git@github.com:jscoq/addon-extlib.git
@@ -21,7 +21,7 @@
 [submodule "simpleio"]
 	path = simpleio
     url = git@github.com:jscoq/addon-simpleio.git
-    branch = simpleio-1.5.0-8.14
+    branch = simpleio-1.6.0-8.15
 [submodule "quickchick"]
 	path = quickchick
     url = git@github.com:jscoq/addon-quickchick.git
