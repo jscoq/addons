@@ -37,7 +37,7 @@
 [submodule "paco"]
 	path = paco
 	url = git@github.com:jscoq/addon-paco.git
-    branch = paco-4.1.1-8.14
+    branch = paco-4.1.2-8.15
 [submodule "snu-sflib"]
 	path = snu-sflib
     url = git@github.com:jscoq/addon-snu-sflib.git
@@ -53,7 +53,7 @@
 [submodule "fcsl-pcm"]
 	path = fcsl-pcm
 	url = git@github.com:jscoq/addon-fcsl-pcm.git
-    branch = main
+    branch = fcsl-pcm-1.4.0-8.15
 [submodule "pnp"]
 	path = pnp
 	url = git@github.com:jscoq/addon-pnp.git
@@ -61,7 +61,7 @@
 [submodule "coqoban"]
 	path = coqoban
 	url = git@github.com:jscoq/addon-coqoban.git
-	branch = v8.14
+	branch = v8.15
 [submodule "stdpp"]
 	path = stdpp
 	url = git@github.com:jscoq/addon-stdpp.git

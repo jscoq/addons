@@ -53,10 +53,10 @@ world:
 	cd mathcomp           && make && make install    # required by QuickChick, FCSL-PCM, HTT
 	cd mathcomp-extra     && make
 	cd quickchick         && make
-	cd hahn               && make && make install    # required by Promising
+	#cd hahn               && make && make install    # required by Promising
 	cd paco               && make && make install    # required by Promising
 	cd snu-sflib          && make && make install    # required by Promising
-	cd promising          && make
+	#cd promising          && make
 	cd fcsl-pcm           && make && make install    # required by HTT
 	cd htt                && make && make install    # required by PnP
 	cd pnp                && make
