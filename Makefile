@@ -46,12 +46,12 @@ MSG = ${error MSG= is mandatory}
 endif
 
 world:
-	cd elpi               && make && make install    # required by mathcomp-extra
+	#cd elpi               && make && make install    # required by mathcomp-extra
 	cd equations          && make
 	cd extlib             && make && make install    # required by SimpleIO
 	cd simpleio           && make && make install    # required by QuickChick
 	cd mathcomp           && make && make install    # required by QuickChick, FCSL-PCM, HTT
-	cd mathcomp-extra     && make
+	#cd mathcomp-extra     && make
 	cd quickchick         && make
 	cd hahn               && make && make install    # required by Promising
 	cd paco               && make && make install    # required by Promising
@@ -71,6 +71,11 @@ privates:
 ifneq ($(filter software-foundations, $(WITH_PRIVATE)),)
 	cd software-foundations && make
 endif
+
+.PHONY: %
+
+env:
+	@echo export DUNE_WORKSPACE=$(DUNE_WORKSPACE)
 
 set-ver:
 	_scripts/set-ver ${addprefix @,$(CONTEXT)} $(_V)

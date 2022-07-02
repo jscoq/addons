@@ -13,7 +13,7 @@
 [submodule "equations"]
 	path = equations
     url = git@github.com:jscoq/addon-equations.git
-    branch = equations-1.3-8.15
+    branch = equations-1.3-8.16
 [submodule "extlib"]
 	path = extlib
     url = git@github.com:jscoq/addon-extlib.git
@@ -21,11 +21,11 @@
 [submodule "simpleio"]
 	path = simpleio
     url = git@github.com:jscoq/addon-simpleio.git
-    branch = simpleio-1.6.0-8.15
+    branch = simpleio-1.7.0-8.16
 [submodule "quickchick"]
 	path = quickchick
     url = git@github.com:jscoq/addon-quickchick.git
-    branch = quickchick-1.5.1-8.14
+    branch = quickchick-1.6.3-8.16
 [submodule "software-foundations"]
 	path = software-foundations
     url = git@github.com:jscoq/addon-software-foundations
@@ -33,7 +33,7 @@
 [submodule "hahn"]
 	path = hahn
     url = git@github.com:jscoq/addon-hahn.git
-    branch = master
+    branch = coq-v8.16
 [submodule "paco"]
 	path = paco
 	url = git@github.com:jscoq/addon-paco.git
@@ -46,14 +46,14 @@
 	path = promising
     url = git@github.com:jscoq/addon-promising.git
     branch = 8.14
-[submodule "htt"]
-	path = htt
-    url = git@github.com:jscoq/addon-htt.git
-    branch = main
 [submodule "fcsl-pcm"]
 	path = fcsl-pcm
 	url = git@github.com:jscoq/addon-fcsl-pcm.git
     branch = fcsl-pcm-1.4.0-8.15
+[submodule "htt"]
+	path = htt
+    url = git@github.com:jscoq/addon-htt.git
+    branch = main
 [submodule "pnp"]
 	path = pnp
 	url = git@github.com:jscoq/addon-pnp.git
