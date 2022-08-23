@@ -9,7 +9,7 @@
 [submodule "elpi"]
 	path = elpi
     url = git@github.com:jscoq/addon-elpi.git
-    branch = elpi-1.12-8.15
+    branch = elpi-1.14-8.16
 [submodule "equations"]
 	path = equations
     url = git@github.com:jscoq/addon-equations.git
@@ -65,8 +65,8 @@
 [submodule "stdpp"]
 	path = stdpp
 	url = git@github.com:jscoq/addon-stdpp.git
-	branch = stdpp-1.6.0-coq-8.14
+	branch = stdpp-1.8.0-coq-8.16
 [submodule "iris"]
 	path = iris
 	url = git@github.com:jscoq/addon-iris.git
-	branch = iris-3.5.0-coq-8.14
+	branch = iris-4.0.0-coq-8.16
