@@ -1,7 +1,7 @@
 [submodule "mathcomp"]
 	path = mathcomp
 	url = git@github.com:jscoq/addon-mathcomp
-	branch = mathcomp-1.12.0
+	branch = mathcomp-1.15.0
 [submodule "mathcomp-extra"]
 	path = mathcomp-extra
 	url = git@github.com:jscoq/addon-mathcomp-extra.git
