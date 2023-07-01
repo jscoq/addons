@@ -70,3 +70,6 @@
 	path = iris
 	url = git@github.com:jscoq/addon-iris.git
 	branch = iris-4.0.0-coq-8.16
+[submodule "hott"]
+	path = hott
+	url = git@github.com:jscoq/addon-hott.git

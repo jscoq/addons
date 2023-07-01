@@ -53,7 +53,6 @@ world:
 	cd mathcomp           && make && make install    # required by QuickChick, FCSL-PCM, HTT
 	cd mathcomp-extra     && make
 	cd quickchick         && make
-	cd hahn               && make
 	cd paco               && make
 	cd snu-sflib          && make
 	cd fcsl-pcm           && make && make install    # required by HTT
@@ -107,3 +106,11 @@ ci:
 	$(MAKE) clean-slate
 	$(OPAM_ENV) && $(MAKE)
 	$(MAKE) pack
+
+FORCE:
+
+build-%: FORCE
+	cd $* && make
+
+install-%: FORCE
+	cd $* && make && make install
