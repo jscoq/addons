@@ -73,3 +73,6 @@
 [submodule "hott"]
 	path = hott
 	url = git@github.com:jscoq/addon-hott.git
+[submodule "unimath"]
+	path = unimath
+	url = https://github.com/jscoq/addon-unimath.git
